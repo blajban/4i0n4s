@@ -23,3 +23,6 @@ services:
     environment:
       - MQTT_BROKER=mosquitto
 
+volumes:
+  mosquitto_data:
+  mosquitto_log:
