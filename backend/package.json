@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "production": "NODE_ENV='production' node app.js",
     "test": "jest --verbose --coverage",
     "lint": "eslint . --ext .js --ignore-pattern node_modules/"
@@ -16,12 +16,9 @@
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
-    "eventsource": "^2.0.2",
     "express": "^4.14.0",
     "morgan": "^1.10.0",
     "node-fetch": "^2.6.1",
-    "socket.io": "^4.6.1",
-    "sqlite": "^4.2.1",
     "sqlite3": "^5.1.6"
   },
   "devDependencies": {
