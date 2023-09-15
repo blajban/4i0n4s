@@ -8,4 +8,4 @@ RUN npm install
 
 COPY . .
 
-CMD ["node", "logger.js"]
+CMD ["node", "forwarder.js"]

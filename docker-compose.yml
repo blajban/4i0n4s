@@ -18,8 +18,8 @@ services:
     restart:
       "always"
 
-  logger:
-    build: ./logger
+  forwarder:
+    build: ./forwarder
     networks:
       4i0n4s:
     environment:
@@ -35,6 +35,16 @@ services:
       4i0n4s:
     restart:
       "always"
+
+  backend:
+    build: ./backend
+    networks:
+      4i0n4s:
+    container_name: "backend"
+    restart:
+      "always"
+    ports:
+      - "1337:1337"
 
 volumes:
   mosquitto_data:

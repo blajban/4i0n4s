@@ -2,8 +2,8 @@
 while :
 do
     TEMP=$(shuf -i 20-25 -n 1)
-    echo "$TEMP"
-    mosquitto_pub -h mosquitto -t "home/livingroom/temperature" -m "$TEMP"
+    HUMIDITY=$(shuf -i 50-80 -n 1)
+    mosquitto_pub -h mosquitto -t "home/climate" -m "$TEMP/$HUMIDITY"
     sleep 10
 done
 
