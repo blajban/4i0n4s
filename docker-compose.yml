@@ -1,16 +1,24 @@
 version: '3.7'
 
+networks:
+  4i0n4s:
+
 services:
   mosquitto:
     image: eclipse-mosquitto
     ports:
       - "1883:1883"
+    networks:
+      4i0n4s:
+    container_name: "mosquitto"
     volumes:
       - mosquitto_data:/mosquitto/data
       - mosquitto_log:/mosquitto/log
 
   logger:
     build: ./logger
+    networks:
+      4i0n4s:
     environment:
       - MQTT_BROKER=mosquitto
 
