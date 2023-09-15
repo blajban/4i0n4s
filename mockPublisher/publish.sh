@@ -1,6 +1,8 @@
 #!/bin/bash
-
-while true; do
-    mosquitto_pub -h localhost -t "test/topic" -m "Hello, MQTT!"
-    sleep 2
+while :
+do
+    TEMP=$(shuf -i 20-25 -n 1)
+    mosquitto_pub -h mosquitto -t "home/livingroom/temperature" -m "$TEMP"
+    sleep 10
 done
+
