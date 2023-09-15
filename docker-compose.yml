@@ -15,11 +15,15 @@ services:
       - mosquitto_data:/mosquitto/data
       - mosquitto_log:/mosquitto/log
       - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    restart:
+      "always"
 
   mock_publisher:
     build: ./mockPublisher
     networks:
       4i0n4s:
+    restart:
+      "always"
 
   logger:
     build: ./logger
@@ -27,6 +31,8 @@ services:
       4i0n4s:
     environment:
       - MQTT_BROKER=mosquitto
+    restart:
+      "always"
 
 volumes:
   mosquitto_data:
