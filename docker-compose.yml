@@ -18,19 +18,19 @@ services:
     restart:
       "always"
 
-  mock_publisher:
-    build: ./mockPublisher
-    networks:
-      4i0n4s:
-    restart:
-      "always"
-
   logger:
     build: ./logger
     networks:
       4i0n4s:
     environment:
       - MQTT_BROKER=mosquitto
+    restart:
+      "always"
+
+  publisher:
+    build: ./publisher
+    networks:
+      4i0n4s:
     restart:
       "always"
 
