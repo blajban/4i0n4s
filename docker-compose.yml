@@ -23,7 +23,9 @@ services:
     networks:
       4i0n4s:
     environment:
-      - MQTT_BROKER=mosquitto
+      - MQTT_BROKER=mqtt://mosquitto
+    depends_on:
+      - mosquitto
     restart:
       "always"
 
