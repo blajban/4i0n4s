@@ -14,6 +14,7 @@ services:
     volumes:
       - mosquitto_data:/mosquitto/data
       - mosquitto_log:/mosquitto/log
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
 
   logger:
     build: ./logger
@@ -22,6 +23,3 @@ services:
     environment:
       - MQTT_BROKER=mosquitto
 
-volumes:
-  mosquitto_data:
-  mosquitto_log:
