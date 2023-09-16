@@ -6,7 +6,7 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')
 
 const temperature = require('./routes/climate.js');
-
+const relay = require('./routes/relay.js');
 
 const app = express()
 const httpServer = require("http").createServer(app);
@@ -28,6 +28,7 @@ app.get('/', (req, res) => {
 })
 
 app.use("/climate", temperature);
+app.use("/relay", relay);
 
 // Handle not found
 app.use((req, res, next) => {
